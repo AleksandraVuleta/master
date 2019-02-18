@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+
+using Foundation;
+using MCMobileApp.Framework.Controls;
+using QRScanner.iOS.Renderers;
+using UIKit;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.iOS;
+
+[assembly: ExportRenderer(typeof(CustomEntry), typeof(CustomEntryRenderer))]
+namespace QRScanner.iOS.Renderers
+{
+    internal class CustomEntryRenderer : EntryRenderer
+    {
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
+
+           //CustomEntry entry = (CustomEntry)sender;
+           /// entry.Borde = Color.IndianRed;
+        }
+    }
+}

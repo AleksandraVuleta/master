@@ -11,7 +11,6 @@ using ZXing.Net.Mobile.Forms;
 
 namespace QRScanner.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class StartPage : ContentPage
 	{
 		public StartPage ()
@@ -69,6 +68,11 @@ namespace QRScanner.Views
         private async void GenerateQR_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new Views.GenerateQR());
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return base.OnBackButtonPressed();
         }
     }
 }

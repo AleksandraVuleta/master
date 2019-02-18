@@ -3,37 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:QRScanner"
              xmlns:views="clr-namespace:QRScanner.Views"
+             xmlns:controls="clr-namespace:QRScanner.Controls"
              x:Class="QRScanner.MainPage"
-             BackgroundImage="background.jpg">
-    <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="30,40" IsClippedToBounds="True">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+             BackgroundImage="background5.jpg">
+    <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <StackLayout Padding="10,20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
+                <StackLayout Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <controls:CustomEntry x:Name="ScanResult" Text="{Binding Result}" FontSize="Medium" BorderColor="IndianRed" WidthRequest="300"/>
+                    <Button Image="copy.png" x:Name="CopyResult" Clicked="CopyResult_Clicked" BackgroundColor="IndianRed" WidthRequest="40" HeightRequest="20"
+                            BorderColor="IndianRed" BorderWidth="2"/>
+                </StackLayout>
 
-            <StackLayout Grid.Row="0" Grid.Column="0">
-                <Entry x:Name="ScanResult" Text="{Binding Result}" Margin="2" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="DarkGoldenrod" WidthRequest="250"/>
-            </StackLayout>
+                <!--<StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Button Image="copy.png" x:Name="CopyResult" Clicked="CopyResult_Clicked" WidthRequest="30" HeightRequest="30" BackgroundColor="IndianRed" 
+                            BorderColor="IndianRed" BorderWidth="1" />
+                </StackLayout>-->
 
-            <StackLayout Grid.Row="0" Grid.Column="1">
-                <ImageButton Source="copy.png" x:Name="CopyResult" Clicked="CopyResult_Clicked" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent" Margin="2" HorizontalOptions="EndAndExpand"/>
-            </StackLayout>
+                <StackLayout Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="2">
+                    <Button Text="Open in browser" x:Name="OpenInBrowser" Clicked="OpenInBrowser_Clicked" TextColor="Black" 
+                            BackgroundColor="Transparent" BorderColor="IndianRed" BorderWidth="1" />
+                </StackLayout>
 
-            <StackLayout Grid.Row="0" Grid.Column="2">
-                <ImageButton Source="click.png" x:Name="OpenInBrowser" Clicked="OpenInBrowser_Clicked" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent" Margin="2" HorizontalOptions="EndAndExpand"/>
-            </StackLayout>
-
-            <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                <Button Text="Scan again" x:Name="ScanQR" Clicked="ScanQR_Clicked" BackgroundColor="DarkGoldenrod" TextColor="White" BorderRadius="10"/>
-            </StackLayout>
-
-        </Grid>
+                <StackLayout Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="2">
+                    <Button Text="Scan again" x:Name="ScanQR" Clicked="ScanQR_Clicked" BackgroundColor="Transparent" TextColor="Black" 
+                            BorderRadius="5" BorderColor="IndianRed" BorderWidth="1" />
+                </StackLayout>
+            </Grid>
+        </StackLayout>
     </ScrollView>
 </ContentPage>

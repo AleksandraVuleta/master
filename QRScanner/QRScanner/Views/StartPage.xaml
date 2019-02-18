@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="QRScanner.Views.StartPage"
-             BackgroundImage="background.png">
+             BackgroundImage="background5.jpg">
 
     <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="5">
         <Grid>
@@ -15,26 +15,27 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <StackLayout Grid.Row="0" Grid.Column="0"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="250" WidthRequest="250">
-                <Frame CornerRadius="10" BorderColor="CadetBlue" BackgroundColor="FloralWhite">
+                <Frame CornerRadius="10" BorderColor="WHite" BackgroundColor="FloralWhite">
                     <ImageButton Source="scan.png" Clicked="ScanQR_Clicked" HeightRequest="100" WidthRequest="100" BackgroundColor="Transparent"/>
                 </Frame>
-                <Label Text="Scan code" HorizontalTextAlignment="Center" TextColor="DarkGoldenrod" />
+                <Label Text="Scan code" HorizontalTextAlignment="Center" TextColor="WHite" />
 
-                <Frame CornerRadius="10" BorderColor="CadetBlue" BackgroundColor="FloralWhite">
+                <Frame CornerRadius="10" BorderColor="WHite" BackgroundColor="FloralWhite">
                     <ImageButton Source="info.png" HeightRequest="100" WidthRequest="100" BackgroundColor="Transparent"/>
                 </Frame>
-                <Label Text="Info" HorizontalTextAlignment="Center" TextColor="DarkGoldenrod"/>
+                <Label Text="Info" HorizontalTextAlignment="Center" TextColor="WHite"/>
             </StackLayout>
 
             <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="250" WidthRequest="250">
-                <Frame CornerRadius="10" BorderColor="CadetBlue" BackgroundColor="FloralWhite">
+                <Frame CornerRadius="10" BorderColor="WHite" BackgroundColor="FloralWhite">
                     <ImageButton Source="generate.png" Clicked="GenerateQR_Clicked" HeightRequest="100" WidthRequest="100" BackgroundColor="Transparent"/>
                 </Frame>
-                <Label Text="Generate code" HorizontalTextAlignment="Center" TextColor="DarkGoldenrod"/>
-                <Frame CornerRadius="10" BorderColor="CadetBlue" BackgroundColor="FloralWhite">
+                <Label Text="Generate code" HorizontalTextAlignment="Center" TextColor="WHite"/>
+
+                <Frame CornerRadius="10" BorderColor="WHite" BackgroundColor="FloralWhite">
                     <ImageButton Source="settings.png" HeightRequest="100" WidthRequest="100" BackgroundColor="Transparent"/>
                 </Frame>
-                <Label Text="Settings" HorizontalTextAlignment="Center" TextColor="DarkGoldenrod"/>
+                <Label Text="Settings" HorizontalTextAlignment="Center" TextColor="WHite"/>
             </StackLayout>
         </Grid>
     </ScrollView>

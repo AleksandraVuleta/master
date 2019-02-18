@@ -5,6 +5,7 @@ using Xamarin.Forms.Xaml;
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace QRScanner
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class App : Application
     {
         public App()
@@ -12,6 +13,8 @@ namespace QRScanner
             InitializeComponent();
 
             MainPage = new Views.StartPage();
+
+            //MainPage = new Views.ScanOnlyCase();
         }
 
         protected override void OnStart()
